@@ -50,8 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
-
+function employeeUpdater (){
+    for(let i=0; i<employees.length; i++){
+    if (employees[i].firstName === 'Theo'){
+      employees.splice(i,1)
+    } else {if (employees[i].firstName === 'Lorie'){
+      employees[i].department = 'HR'
+    }}
+  }
+  return employees;
+  }
+  console.log(employeeUpdater());
 
 
 ////////// PROBLEM 2 //////////
@@ -68,7 +77,28 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(workplaceAccidents){
+  let result = [];
+  // iterate over all numbers in incoming array
+  for (let i=0; i < workplaceAccidents.length; i++){
+
+    let exists = false;
+    for (let j=0; j < result.length; j++){
+      if (workplaceAccidents[i] === result[j]) {
+        exists = true
+        break; //Mental note DL
+      }
+    }
+
+    if (!exists) {
+      result.push(workplaceAccidents[i])
+    }
+  }
+
+  return result  
+}
+
+console.log(workplaceAccidents)
 
 
 
@@ -96,9 +126,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends['0'].activities = 'eat food'
+// var grumpyActivity;
+var fluffy2ndFriend = cat.catFriends['1'].name = 'Lazy Bones'
 
 
 
@@ -138,8 +168,14 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false
+  }
+  return myCar // Mental note
+}
 
+console.log(myCar.accidents)
 
 
 ////////// PROBLEM 5 //////////
@@ -157,6 +193,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(numsArr){
+  for(let i = 0; i < numsArr.length; i++){
+    for(let j = 0; j < numsArr[i].length; j++){
+      numsArr[i][j] = (numsArr[i][j] % 2 === 0 ? 'even': 'odd')
+    }
+  }
+  return numsArr
+}
+console.log(looper(numsArr))
+
+                                    //Matt//
+//this passes just fine on repl.
 
 
